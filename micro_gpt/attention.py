@@ -1,4 +1,4 @@
-﻿import numpy as np
+import numpy as np
 from typing import Optional, Tuple
 from micro_gpt.activations import softmax
 
@@ -46,6 +46,7 @@ class MultiHeadAttention:
         self.d_model = d_model
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
+        self.d_k = self.head_dim
 
         # Projections
         scale = np.sqrt(1.0 / d_model)
