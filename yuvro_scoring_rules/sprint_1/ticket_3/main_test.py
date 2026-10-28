@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.embeddings import EmbeddingTable
+from micro_gpt.embeddings import EmbeddingTable
 
 def test_embedding_table():
     emb = EmbeddingTable(vocab_size=10, d_model=16)

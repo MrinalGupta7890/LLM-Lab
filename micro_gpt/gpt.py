@@ -1,13 +1,13 @@
 ﻿import numpy as np
 from typing import List, Union
-from tiny_llm.transformer_block import TransformerBlock, LayerNorm
-from tiny_llm.embeddings import EmbeddingTable
-from tiny_llm.linear import Linear
+from micro_gpt.transformer_block import TransformerBlock, LayerNorm
+from micro_gpt.embeddings import EmbeddingTable
+from micro_gpt.linear import Linear
 
 class GPT:
-    \"\"\"
+    """
     A decoder-only autoregressive generative Transformer (GPT).
-    \"\"\"
+    """
     def __init__(
         self,
         vocab_size: int,
@@ -33,12 +33,12 @@ class GPT:
         self.lm_head = Linear(d_model, vocab_size, bias=False)
 
     def forward(self, input_ids: np.ndarray) -> np.ndarray:
-        \"\"\"
+        """
         Args:
             input_ids: Array of token IDs with shape (batch_size, seq_len)
         Returns:
             Logits of shape (batch_size, seq_len, vocab_size)
-        \"\"\"
+        """
         # TODO: Implement GPT forward pass:
         # 1. token_emb + pos_emb
         # 2. pass through each TransformerBlock

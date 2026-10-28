@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.sampler import top_k_filtering, top_p_filtering
+from micro_gpt.sampler import top_k_filtering, top_p_filtering
 
 def test_filtering():
     logits = np.array([1.0, 5.0, 2.0, 10.0, 3.0])

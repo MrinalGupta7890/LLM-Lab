@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.attention import create_causal_mask, scaled_dot_product_attention
+from micro_gpt.attention import create_causal_mask, scaled_dot_product_attention
 
 def test_causal_mask():
     seq_len = 4

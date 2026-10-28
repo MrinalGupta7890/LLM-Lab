@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.activations import softmax
+from micro_gpt.activations import softmax
 
 def test_temperature_scaling():
     logits = np.array([2.0, 1.0, 0.0])

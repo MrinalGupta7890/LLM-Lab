@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.attention import MultiHeadAttention
+from micro_gpt.attention import MultiHeadAttention
 
 def test_multi_head_attention():
     batch, seq_len, d_model, num_heads = 2, 4, 16, 4

@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.activations import softmax
+from micro_gpt.activations import softmax
 
 def test_softmax_stability():
     logits = np.array([1000.0, 1001.0, 1002.0])

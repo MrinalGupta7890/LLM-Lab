@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.transformer_block import LayerNorm
+from micro_gpt.transformer_block import LayerNorm
 
 def test_layernorm():
     ln = LayerNorm(d_model=8)

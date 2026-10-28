@@ -1,7 +1,7 @@
 import sys
 import numpy as np
-from tiny_llm.transformer_block import FeedForward
-from tiny_llm.activations import gelu
+from micro_gpt.transformer_block import FeedForward
+from micro_gpt.activations import gelu
 
 def test_ffn_and_gelu():
     x = np.array([-2.0, 0.0, 2.0])

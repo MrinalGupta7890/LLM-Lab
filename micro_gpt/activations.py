@@ -1,7 +1,7 @@
 ﻿import numpy as np
 
 def softmax(x: np.ndarray, temperature: float = 1.0, axis: int = -1) -> np.ndarray:
-    \"\"\"
+    """
     Compute numerically stable softmax with optional temperature scaling.
     
     Formula:
@@ -13,12 +13,12 @@ def softmax(x: np.ndarray, temperature: float = 1.0, axis: int = -1) -> np.ndarr
         axis: Axis along which softmax is computed (default: -1)
     Returns:
         Probability distribution with the same shape as x, summing to 1 along axis.
-    \"\"\"
+    """
     # TODO: Implement numerically stable softmax with temperature scaling
     pass
 
 def gelu(x: np.ndarray) -> np.ndarray:
-    \"\"\"
+    """
     Gaussian Error Linear Unit (GELU) activation function using the tanh approximation:
     GELU(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))
     
@@ -26,6 +26,6 @@ def gelu(x: np.ndarray) -> np.ndarray:
         x: Input array
     Returns:
         Activated array with same shape
-    \"\"\"
+    """
     # TODO: Implement GELU activation
     pass

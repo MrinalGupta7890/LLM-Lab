@@ -1,5 +1,5 @@
 import sys
-from tiny_llm.tokenizer import SimpleTokenizer
+from micro_gpt.tokenizer import SimpleTokenizer
 
 def test_tokenizer():
     tok = SimpleTokenizer(vocab=["hello", "world", "transformer"])

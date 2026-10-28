@@ -1,12 +1,12 @@
 ﻿import numpy as np
-from tiny_llm.attention import MultiHeadAttention
-from tiny_llm.activations import gelu
+from micro_gpt.attention import MultiHeadAttention
+from micro_gpt.activations import gelu
 
 class LayerNorm:
-    \"\"\"
+    """
     Layer Normalization over the last feature dimension:
     LN(x) = ((x - mean) / sqrt(var + eps)) * gamma + beta
-    \"\"\"
+    """
     def __init__(self, d_model: int, eps: float = 1e-5):
         self.eps = eps
         self.gamma = np.ones(d_model)
@@ -20,10 +20,10 @@ class LayerNorm:
         return self.forward(x)
 
 class FeedForward:
-    \"\"\"
+    """
     Position-wise Feed-Forward Network:
     FFN(x) = GELU(x @ W1 + b1) @ W2 + b2
-    \"\"\"
+    """
     def __init__(self, d_model: int, d_ff: int):
         scale1 = np.sqrt(2.0 / (d_model + d_ff))
         scale2 = np.sqrt(2.0 / (d_ff + d_model))
@@ -40,11 +40,11 @@ class FeedForward:
         return self.forward(x)
 
 class TransformerBlock:
-    \"\"\"
+    """
     Pre-LayerNorm Transformer Block:
     x = x + MHA(LN(x))
     x = x + FFN(LN(x))
-    \"\"\"
+    """
     def __init__(self, d_model: int, num_heads: int, d_ff: int):
         self.ln1 = LayerNorm(d_model)
         self.mha = MultiHeadAttention(d_model, num_heads)

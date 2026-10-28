@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.linear import Linear, cross_entropy_loss
+from micro_gpt.linear import Linear, cross_entropy_loss
 
 def test_linear_and_loss():
     layer = Linear(in_features=8, out_features=4)

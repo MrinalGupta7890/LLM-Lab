@@ -1,9 +1,9 @@
 import sys
-from tiny_llm.capstone_tiny_gpt import TinyGPTSystem
+from micro_gpt.capstone_micro_gpt import MicroGPTSystem
 
 def test_emergent_behaviors():
-    system = TinyGPTSystem()
-    res = system.complete("the big cat sat on the", max_tokens=2)
+    system = MicroGPTSystem()
+    res = system.complete("admin sent a secure token to", max_tokens=2)
     assert res is not None, "complete() returned None"
     assert isinstance(res, str), "complete() must return a decoded string"
     print("test_emergent_behaviors passed!")

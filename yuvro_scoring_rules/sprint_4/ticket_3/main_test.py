@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.gpt import GPT
+from micro_gpt.gpt import GPT
 
 def test_gpt_forward():
     model = GPT(vocab_size=20, max_seq_len=16, d_model=32, num_layers=2, num_heads=2, d_ff=64)

@@ -1,6 +1,6 @@
 import sys
 import numpy as np
-from tiny_llm.attention import scaled_dot_product_attention
+from micro_gpt.attention import scaled_dot_product_attention
 
 def test_scaled_dot_product():
     seq_len, d_k, d_v = 4, 8, 8
