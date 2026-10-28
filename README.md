@@ -1,6 +1,6 @@
-# MicroGPT: Generative Transformer Engine from First Principles
+# LLM Lab: Building a Transformer from First Principles
 
-Welcome to the **MicroGPT Lab** on YLabs! In this lab, you will build a complete, generative Transformer engine from first principles using pure **Python and NumPy**.
+Welcome to the **LLM Lab** on YLabs! In this lab, you will build a complete, generative Transformer engine from first principles using pure **Python and NumPy**.
 
 ## 🚀 Lab Overview
 This lab takes you from raw text tokenization to continuous latent embeddings, scaled contextual attention matrices, feature standardization with LayerNorm, and deep residual layers, culminating in building and training your own **MicroGPT** model with verified emergent transformer behaviors.
