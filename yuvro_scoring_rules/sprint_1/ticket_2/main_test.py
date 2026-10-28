@@ -32,8 +32,8 @@ def evaluate():
     try:
         from micro_gpt.tokenizer import SimpleTokenizer
         tok = SimpleTokenizer(vocab=["hello", "world", "transformer"])
-        if not hasattr(tok, "token2id") or not hasattr(tok, "id2token"):
-            tasks["task1"] = make_task_result(0, 30, "SimpleTokenizer missing token2id or id2token dictionary")
+        if not hasattr(tok, "token2id") or not hasattr(tok, "id2token") or len(tok.token2id) == 0:
+            tasks["task1"] = make_task_result(0, 30, "token2id and id2token dictionaries are empty. Initialize vocabulary and special tokens in __init__")
         elif len(tok) < 7:
             tasks["task1"] = make_task_result(0, 30, f"Vocabulary size should include special tokens and words (expected >= 7, got {len(tok)})")
         elif "<UNK>" not in tok.token2id or "<PAD>" not in tok.token2id:

@@ -55,7 +55,17 @@ def evaluate():
         elif not np.allclose(ln.gamma, 1.0) or not np.allclose(ln.beta, 0.0):
             tasks["task2"] = make_task_result(0, 50, "LayerNorm gamma must initialize to 1.0 and beta to 0.0")
         else:
-            tasks["task2"] = make_task_result(50, 50, "Affine scale (gamma) and shift (beta) transformations verified")
+            # Test that forward actually scales by gamma and shifts by beta
+            ln.gamma = np.full(8, 2.0)
+            ln.beta = np.full(8, 0.5)
+            x = np.array([[10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0]])
+            out = ln(x)
+            if out is None:
+                tasks["task2"] = make_task_result(0, 50, "LayerNorm forward() returned None. Implement normalization and affine scaling in micro_gpt/transformer_block.py")
+            elif not np.isclose(np.mean(out), 0.5, atol=1e-3) or not np.isclose(np.var(out), 4.0, atol=1e-1):
+                tasks["task2"] = make_task_result(0, 50, f"LayerNorm forward did not apply gamma scaling or beta shift (mean={np.mean(out):.3f}, var={np.var(out):.3f})")
+            else:
+                tasks["task2"] = make_task_result(50, 50, "Affine scale (gamma) and shift (beta) transformations verified in forward pass")
     except Exception as e:
         tasks["task2"] = make_task_result(0, 50, f"Parameter verification error: {str(e)}")
 

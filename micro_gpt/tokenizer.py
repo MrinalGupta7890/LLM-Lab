@@ -1,4 +1,4 @@
-﻿from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple
 
 class SimpleTokenizer:
     """
@@ -9,10 +9,10 @@ class SimpleTokenizer:
         if vocab is None:
             vocab = []
         
-        # Ensure special tokens are always present
-        full_vocab = list(dict.fromkeys(self.special_tokens + vocab))
-        self.token2id: Dict[str, int] = {token: idx for idx, token in enumerate(full_vocab)}
-        self.id2token: Dict[int, str] = {idx: token for token, idx in self.token2id.items()}
+        # TODO: Initialize token2id and id2token lookup dictionaries
+        # Ensure special tokens (<PAD>, <UNK>, <BOS>, <EOS>) are always present
+        self.token2id: Dict[str, int] = {}
+        self.id2token: Dict[int, str] = {}
 
     def __len__(self) -> int:
         return len(self.token2id)
